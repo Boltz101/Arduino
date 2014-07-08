@@ -1,17 +1,14 @@
 /*
-  Blink
-  Turns on an LED on for one second, then off for one second, repeatedly.
+  Traffic Lights
+  Turns on an LED on in a predetermined sequence - Red, Red Amber, Green, Amber, Red.
  
   This example code is in the public domain.
  */
  
-// Pin 13 has an LED connected on most Arduino boards.
-// give it a name:
+// determine the colours and the pins that they are connected to
 int green = 12; //green
 int amber = 8; //amber
 int red = 4; //red
-
-
 
 // the setup routine runs once when you press reset:
 void setup() 

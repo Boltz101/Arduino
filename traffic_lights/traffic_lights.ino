@@ -17,6 +17,18 @@ void setup()
   pinMode(green, OUTPUT); 
   pinMode(amber, OUTPUT);
   pinMode(red, OUTPUT);
+  
+  //test that the pins are all working
+  {
+  digitalWrite(red, HIGH);
+  digitalWrite(amber, HIGH);
+  digitalWrite(green, HIGH);
+  delay(2500);
+  digitalWrite(red, LOW);
+  digitalWrite(amber, LOW);
+  digitalWrite(green, LOW);
+  }
+  
 }
 
 // the loop routine runs over and over again forever:

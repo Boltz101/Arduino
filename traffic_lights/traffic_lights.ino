@@ -33,6 +33,8 @@ void setup()
 
 // the loop routine runs over and over again forever:
 void loop() {
+  digitalWrite(red, LOW); //makes sure that red is off to begin the loop
+  delay(1250);
   digitalWrite(red, HIGH); //red on
   delay(1250);
   digitalWrite(amber, HIGH); //red amber on

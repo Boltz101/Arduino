@@ -1,0 +1,43 @@
+/* Simple sketch to take a value from a light sensor and turn the LED on if it 
+goes over a certain range.
+
+Some of the original code for this project was copied from https://learn.adafruit.com/photocells?embeds=allow&view=all
+*/
+ 
+int photocellPin = 0;     // connect the sensor to A0
+int photocellReading;     // set the photocell reading
+int LED = 5; // show that there is an LED connected on #5
+int stateLED = LOW; //activates the LED but sets it to off
+
+void setup(void) {
+  pinMode(LED,OUTPUT); //set the LED as an output
+  Serial.begin(9600);   //begin output on 9600 (Don't ask me why it just is)
+}
+ 
+void loop(void) {
+  photocellReading = analogRead(photocellPin);  
+ 
+  Serial.print("Analog reading = ");
+  Serial.print(photocellReading);     // reading from the analogue sensor
+ 
+  // Thresholds for the output
+  if (photocellReading < 10) {
+    Serial.println(" - Well Dark");
+  } else if (photocellReading < 150) {
+    Serial.println(" - Bit Dark");
+  } else if (photocellReading < 300) {
+    Serial.println(" - Getting Light");
+  } else if (photocellReading < 550) {
+    Serial.println(" - Bright");
+  } else {
+    Serial.println(" - Are you on the sun???");
+  }
+  delay(100);
+  
+  if (photocellReading < 280) { //defines that if the reading is over 280
+    digitalWrite(5, HIGH); //turn on the light
+  }
+  else {
+    digitalWrite(5, LOW); //anything else (IE lower) turn off the light.
+  }
+}

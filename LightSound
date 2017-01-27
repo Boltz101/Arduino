@@ -19,16 +19,10 @@ void loop(void) {
   Serial.print(photocellReading);     // reading from the analogue sensor
  
   // Thresholds for the output
-  if (photocellReading < 10) {
-    Serial.println(" - Well Dark");
-  } else if (photocellReading < 150) {
-    Serial.println(" - Bit Dark");
-  } else if (photocellReading < 300) {
-    Serial.println(" - Getting Light");
-  } else if (photocellReading < 550) {
-    Serial.println(" - Bright");
-  } else {
-    Serial.println(" - Are you on the sun???");
+  if (photocellReading < 280) {
+    Serial.println(" - Sensor On");
+  } else if (photocellReading > 280) {
+    Serial.println(" - Sensor off");
   }
   delay(100);
   

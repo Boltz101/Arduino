@@ -1,6 +1,8 @@
 /* Simple sketch to take a value from a light sensor and turn the LED on if it 
 goes over a certain range.
 
+See a video of this code working at https://twitter.com/Adam__Bolton/status/825082666940784640
+
 Some of the original code for this project was copied from https://learn.adafruit.com/photocells?embeds=allow&view=all
 */
  

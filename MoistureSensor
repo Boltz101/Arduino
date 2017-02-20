@@ -1,0 +1,24 @@
+int VAL_PROBE = 0; // Analog pin 0
+int moisture = 0; // the value after the LED goes ON
+int LED = 12; // deinfes LED on Pin 12
+
+void setup() {
+    Serial.begin(9600); // start the serial monitor
+    pinMode(LED, OUTPUT); // defines the LED as an ouput
+   digitalWrite(LED,HIGH); //these 3 lines turn the LED on and off to make sure it is working
+   delay(500);
+   digitalWrite(LED,LOW);
+}
+ void loop() {
+
+    moisture = analogRead(VAL_PROBE); //read value from probe
+ 
+    Serial.println(moisture); //defines the moisture reading
+ 
+    if(moisture <500) { //if the value of moisture is less than 500 light on, else nothing forever.
+        digitalWrite(12,HIGH);
+    } else   {
+        digitalWrite(12,LOW);
+    }
+    delay(100); //delay on checking.
+}

@@ -1,10 +1,11 @@
 //original idea for this code is from http://www.electroschematics.com/12065/arduino-soil-moisture-sensor-module/
+//on my sensor 102 is totally dry
 
 int LED= 12; // LED indicator Pin 12
 int SENSOR= 0; // Soil Sensor input at A0
 int value= 0;
 void setup() {
-   Serial.begin(9600); //being serial
+   Serial.begin(9600); //begin serial
    pinMode(LED, OUTPUT); //set the LED as an output
    Serial.println("INITIALISING"); //simple message to serial
    digitalWrite(LED,HIGH); //turn on and off the LED to make sure it is working
@@ -15,7 +16,7 @@ void loop() {
    value= analogRead(SENSOR); //read the value of the sensor
    value= value/10; //divide it by 10 to make the number smaller
    Serial.println(value); //the value being passed in
-   if(value>16) // statement about the value (number), if it is bigger than 16 then turn the light on
+   if(value>60) // statement about the value (number), if it is bigger than 16 then turn the light on
    {
       digitalWrite(LED, HIGH);
    }
@@ -23,6 +24,6 @@ void loop() {
    {
       digitalWrite(LED,LOW); //otherwise it remains off
    }
-   delay(100000); //delay for 100,000 before checking again, may make this 1,000,000 to check less frequently and save battery.
+   delay(500); //delay for 500 before checking again, may make this 1,000,000 to check less frequently and save battery.
 
 }

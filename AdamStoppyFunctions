@@ -1,0 +1,67 @@
+
+int LED1Pin = 2;
+int LED2Pin = 3;
+int LED3Pin = 4;
+int LED4Pin = 5;
+int LED5Pin = 6;
+int LED12Pin = 13;
+int mypin;
+
+void setup() {
+
+pinMode(LED1Pin, OUTPUT);
+pinMode(LED2Pin, OUTPUT);
+pinMode(LED3Pin, OUTPUT);
+pinMode(LED4Pin, OUTPUT);
+pinMode(LED5Pin, OUTPUT);
+pinMode(LED12Pin, OUTPUT);
+Serial.begin(9600);
+}
+
+void loop() {
+
+PinSequence();
+SerialRead();
+
+}
+
+void SerialRead(){
+
+mypin = Serial.read();
+  /*if (mypin = "3"){
+    digitalWrite (LED12Pin, HIGH);
+  }
+  else {
+    digitalWrite (LED12Pin, LOW);
+  }*/
+  if (LED3Pin, HIGH) {
+    (LED12Pin, HIGH);
+  }
+  else {
+    (LED12Pin, LOW)}
+  }
+
+}
+
+void PinSequence(){
+for (int scan = 1; scan <9; scan++){
+
+  digitalWrite (LED1Pin, LOW);
+  digitalWrite (LED2Pin, LOW);
+  digitalWrite (LED3Pin, LOW);
+  digitalWrite (LED4Pin, LOW);
+  digitalWrite (LED5Pin, LOW);
+  digitalWrite (LED12Pin, LOW);
+  if (scan ==1) digitalWrite(LED1Pin, HIGH), Serial.println(1);
+  if (scan ==2) digitalWrite(LED2Pin, HIGH), Serial.println(2);
+  if (scan ==3) digitalWrite(LED3Pin, HIGH), Serial.println(3);
+  if (scan ==4) digitalWrite(LED4Pin, HIGH), Serial.println(4);
+  if (scan ==5) digitalWrite(LED5Pin, HIGH), Serial.println(5);
+  if (scan ==6) digitalWrite(LED4Pin, HIGH), Serial.println(4);
+  if (scan ==7) digitalWrite(LED3Pin, HIGH), Serial.println(3);
+  if (scan ==8) digitalWrite(LED2Pin, HIGH), Serial.println(2);
+delay(500);
+
+
+}
+}

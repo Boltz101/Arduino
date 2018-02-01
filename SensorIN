@@ -1,0 +1,22 @@
+int SensorIN = 0; //input at A0
+int LED = 12; //light on pin 12
+int value = 0;
+
+void setup() 
+{
+ Serial.begin(9600); //serial initialise
+ Serial.println("init"); //display at the start so you know it has started
+ pinMode(LED, OUTPUT); // define pin as output
+ digitalWrite(LED, LOW); //turn the light off
+}
+
+void loop() 
+{
+int reading = analogRead(SensorIN);  //read the input
+
+value= analogRead(SensorIN); //define the value
+Serial.println(reading); //print the reading
+
+delay(500);
+
+}

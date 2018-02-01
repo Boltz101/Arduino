@@ -1,0 +1,30 @@
+int DialIn = 0; //input at A0
+int LED = 12; //light on pin 12
+int value = 0;
+
+void setup() 
+{
+ Serial.begin(9600); //serial initialise
+ Serial.println("init"); //display at the start so you know it has started
+ pinMode(LED, OUTPUT); // define pin as output
+ digitalWrite(LED, LOW); //turn the light off
+}
+
+void loop() 
+{
+int reading = analogRead(DialIn);  //read the input
+
+value= analogRead(DialIn); //define the value
+Serial.println(reading); //print the reading
+if(value>350)
+{
+  digitalWrite(LED, HIGH); //if over 350 turn light on
+}
+else
+{
+digitalWrite(LED,LOW); //otherwise off
+}
+
+delay(500);
+
+}

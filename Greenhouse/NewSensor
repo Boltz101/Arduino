@@ -1,0 +1,28 @@
+int TempSensor = 2;
+int Relay = 10;
+int tempValue = 0;
+
+void setup() {
+
+  pinMode(TempSensor, INPUT);
+  pinMode(Relay, OUTPUT);
+  Serial.begin(9600);
+  digitalWrite(TempSensor, LOW);
+  digitalWrite(Relay, LOW);
+
+}
+
+void loop() {
+
+  tempValue = digitalRead(TempSensor);
+  Serial.println(tempValue);
+  delay(1000);
+
+  /*if(tempValue >=25) {
+    digitalWrite(Relay,LOW);
+    }
+    else
+    {
+    digitalWrite(Relay, HIGH;
+    }*/
+}

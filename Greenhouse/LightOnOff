@@ -1,0 +1,19 @@
+int relayPin = 10; //pin of relay module
+
+void setup() {
+  //code below starts the monitor, sets the pinmode to output and then sets the state for the lightbulb to off.
+
+  Serial.begin(9600);
+  pinMode(relayPin, OUTPUT);
+  digitalWrite(relayPin, LOW);
+
+}
+
+void loop() {
+  // turns the light off and on at 1 second intervals forever.
+  digitalWrite(relayPin, LOW);
+  delay(1000);
+  digitalWrite(relayPin, HIGH);
+  delay(1000);
+
+}

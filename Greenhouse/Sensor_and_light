@@ -10,11 +10,11 @@ OneWire oneWire(ONE_WIRE_BUS);
 DallasTemperature sensors(&oneWire);
 
 const int relayPin = 10; //sets the relay pin to #10
-const int threshold = 50.00;
+const int threshold = 20; //sets the threshold to monitor for
 
 void setup(void)
 {
-  pinMode(relayPin, OUTPUT);
+  pinMode(relayPin, OUTPUT); //defines the relayPin as an output and not an input
   Serial.begin(9600); //Begin serial communication
   Serial.println("Arduino Digital Temperature // Serial Monitor Version"); //Print a message
   sensors.begin();
@@ -27,13 +27,13 @@ void loop(void)
   float TempValue = sensors.getTempCByIndex(0);
   Serial.print("Temperature is: ");
   Serial.println(TempValue);
-  
+
   if (TempValue >= threshold)
   {
-    digitalWrite(relayPin, HIGH);
+    digitalWrite(relayPin, LOW);
   }
   if (TempValue < threshold - 1.0)
   { 
-    digitalWrite(relayPin, LOW);
+    digitalWrite(relayPin, HIGH); //this section sets the temp threshold to turn the light on or off
   }
 }
